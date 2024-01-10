@@ -19,7 +19,7 @@
     <title>Frontend Mentor | Product feedback app</title>
     <link rel="stylesheet" href="/src/style/normalize.css" />
     <link rel="stylesheet" href="/src/style/style.css" />
-    <script src="/src/js/app.js"></script>
+    <script src="/src/js/app.js" defer></script>
   </head>
   <body>
     <!-- Sidebar -->
@@ -59,7 +59,7 @@
           </header>
         </div>
       </div>
-      <div class="bloc container bloc--sugestion">
+      <div class="bloc  bloc--suggestion">
         <div class="suggestion__header">
           <div class="suggestion__header__left">
             <span class="suggestion__header__headline">
@@ -67,9 +67,9 @@
               <span class="count">6</span>
               <h2>Suggestions</h2></span
             >
-            <form class="sugestion-sort">
-              <label for="sugestionSort">Sort by : </label>
-              <select name="sugestionSort" id="sugestionSort">
+            <form class="suggestion-sort">
+              <label for="suggestionSort">Sort by : </label>
+              <select name="suggestionSort" id="suggestionSort">
                 <option value="most upvote">Most Upvote</option>
                 <option value="most upvote">Least Upvote</option>
                 <option value="most upvote">Most Comments</option>
@@ -81,10 +81,10 @@
             + Add Feedback
           </button>
         </div>
-        <div class="sugestion__content">
+        <div class="suggestion__content">
           <div class="card card--suggestion-content">
             <div class="left">
-              <div class="pan">99</div>
+              <btn class=" pan">99</btn>
             </div>
             <div class="right">
               <div class="header">
