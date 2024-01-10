@@ -35,8 +35,7 @@ body {
   font-family: Jost, Inter, Roboto, Arial, Helvetica, sans-serif;
   display: flex;
   align-items: center;
-  justify-content:center ;
-
+  justify-content: center;
 }
 h1 {
   font-size: 2.4rem;
@@ -213,7 +212,6 @@ a {
   margin-bottom: 2rem;
 }
 
-
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -233,7 +231,7 @@ a {
     /* background-color: #e74c3c; */
   }
   .bloc--suggestion {
-    background-color: blue;
+    /* background-color: blue; */
 
     padding: 0;
   }
@@ -285,7 +283,7 @@ a {
 }
 /* Suggestion content  */
 
-  .suggestion__content {
+.suggestion__content {
   background-color: var(--color-body);
   border-radius: var(--border-radius);
   height: 80%;
@@ -366,3 +364,9 @@ a {
 .card--suggestion-content .right .header h2 {
   margin: 0;
 }
+/*****************************Feedback details******************************/
+.feedBack-detail {
+  width: 100%;
+  height: 100%;
+}
+
