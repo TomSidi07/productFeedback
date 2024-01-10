@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Jost:ital,wght@0,300;0,400;0,600;0,700;1,200;1,300;1,400&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Product feedback app</title>
+    <link rel="stylesheet" href="/src/style/normalize.css" />
+    <link rel="stylesheet" href="/src/style/style.css" />
+    <script src="/src/js/app.js"></script>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="container">
+      <div class="aside">
+        <div class="card card-aside aside__title">
+          <h3 class="aside__title__text">lorem lorem</h3>
+          <p>Lorem ipsum dolor</p>
+        </div>
+        <div class="card card-aside aside__category">
+          <div class="aside__cat__header">
+            <button class="pan pan--primary">All</button>
+            <button class="pan">UI</button>
+            <button class="pan">UX</button>
+          </div>
+          <div class="aside__cat__content">
+            <button class="pan">Enhancement</button>
+            <button class="pan">Bug</button>
+            <button class="pan">Feature</button>
+          </div>
+        </div>
+        <div class="card card-aside aside__roadmap">
+          <header class="aside__roadmap__header">
+            <h2 class="roadmap__heading">Roadmap</h2>
+            <p class="view">view</p>
+          </header>
+          <header class="aside__roadmap__content">
+            <ul class="list">
+              <li class="list__item">
+                <a href="" class="list__link">Planned</a>
+              </li>
+              <li class="list__item">
+                <a href="" class="list__link">In-progress</a>
+              </li>
+              <li class="list__item"><a href="" class="list__link">Live</a></li>
+            </ul>
+          </header>
+        </div>
+      </div>
+      <div class="bloc container bloc--sugestion">
+        <div class="suggestion__header">
+          <div class="suggestion__header__left">
+            <span class="suggestion__header__headline">
+              <span class="icon"></span>
+              <span class="count">6</span>
+              <h2>Suggestions</h2></span
+            >
+            <form class="sugestion-sort">
+              <label for="sugestionSort">Sort by : </label>
+              <select name="sugestionSort" id="sugestionSort">
+                <option value="most upvote">Most Upvote</option>
+                <option value="most upvote">Least Upvote</option>
+                <option value="most upvote">Most Comments</option>
+                <option value="most upvote">Least Comments</option>
+              </select>
+            </form>
+          </div>
+          <button class="btn suggestion__header__right btn--add-feedback">
+            + Add Feedback
+          </button>
+        </div>
+        <div class="sugestion__content">
+          <div class="card card--suggestion-content">
+            <div class="left">
+              <div class="pan">99</div>
+            </div>
+            <div class="right">
+              <div class="header">
+                <h2>Add tags for blablabla</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Explicabo,.
+                </p>
+                <div class="pan">Enhancement</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add number here -->
+
+    <!-- Add number here -->
+
+    <!-- Add number here -->
+
+    <!-- Sidebar end -->
+
+    <!-- Add number of suggestions here -->
+
+    <!-- No feedback -->
+    <!-- No feedback end -->
+  </body>
+</html>
