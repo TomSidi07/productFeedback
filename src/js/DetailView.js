@@ -1,7 +1,3 @@
-// import SuggestionView from "./SuggestionView";
-
-
-// import createFeedbackView from "./createFeedbackView";
 class DetailView {
   form = document.querySelector(".feedBack-detail-form");
   submitBtn = document.querySelector(".btn--submit-comment");
@@ -13,12 +9,18 @@ class DetailView {
   comment__Char__count = document.querySelector(".comment__Char-count");
   editBtn = document.getElementById("btnEdit");
   editEnv = document.getElementById("editEnv");
+  collectionC = [];
   currentUser = new user(
     "/src/assets/user-images/image-elijah.jpg",
     "Tom",
     "tomsidi07"
   );
   constructor() {
+    // for (let i = 0; i < localStorage.length; i++) {
+    //   if (JSON.parse(localStorage.getItem(i)))
+    //     this.collectionC.push(JSON.parse(localStorage.getItem(i)));
+    // }
+    // console.log(this.collectionC);
     if (this.editBtn) {
       this.editBtn.addEventListener("click", (eve) => {
         eve.preventDefault();
@@ -41,7 +43,7 @@ class DetailView {
       });
     }
   }
-  
+
   showEditMode() {
     this.editEnv.classList.toggle("active");
   }
@@ -108,6 +110,23 @@ class DetailView {
         </div>
       </div>`;
   }
+  generateComment(feedback) {
+    let newCommentVal = new comment(
+      feedback.comments.length++,
+      this.commentInput.value,
+      this.currentUser
+    );
+    newCommentVal.reliedFeedback = JSON.parse(
+      localStorage.getItem("currentObj")
+    ).id;
+    // add the comment to locale Storage
+    this.setComment(newCommentVal);
+    //set current comment to relied feedback
+    this.setCurrentComment(newCommentVal);
+    // Update ui on submit
+    this.updateCommentOnSubmit(newCommentVal);
+    console.log(newCommentVal);
+  }
   adjustComment() {
     if (this.inputControl && this.comment__Char__count)
       this.inputControl.addEventListener("keypress", (eve) => {
@@ -149,6 +168,24 @@ class DetailView {
       commentArray.push(comment);
       return localStorage.setItem("comment", JSON.stringify(commentArray));
     }
+  }
+  setCurrentComment(comment) {
+    const currentFeedback = comment.reliedFeedback;
+    if (currentFeedback === null)
+      return console.log(
+        "You any selected feedback go back to select a suggestion Bro !!!"
+      );
+    if (currentFeedback.comments) {
+      currentFeedback.comments.push(comment);
+    } else {
+      currentFeedback.comments = [];
+      currentFeedback.comments.push(comment);
+    }
+    console.log(currentFeedback);
+    return localStorage.setItem(
+      currentFeedback.id,
+      JSON.stringify(currentFeedback)
+    );
   }
 }
 class comment {

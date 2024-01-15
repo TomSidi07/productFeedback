@@ -1,7 +1,9 @@
 import DetailView from "./DetailView.js";
+import RoadmapView from "./RoadmapView.js";
 import SuggestionView from "./SuggestionView.js";
 import FeedbackView from "./createFeedbackView.js";
-
+let suugsestionMain = document.querySelector(".suggestion");
+let roadmapMain = document.querySelector(".roadmap");
 let suggestionCont = document.querySelector(".suggestion__content");
 let btn__addFeedback = document.querySelector(".btn--add-feedback");
 let btnCancel = document.querySelector(".btn--cancel");
@@ -42,7 +44,7 @@ async function request() {
               let addFeedback = document.querySelector(".add-feedback");
 
               event.preventDefault();
-              popup.classList.toggle("active");
+              if (popup) popup.classList.toggle("active");
               if (btnCancel)
                 btnCancel.addEventListener("click", (eve) => {
                   event.preventDefault();
@@ -102,7 +104,7 @@ function createFeedback() {
   let newFeedback = new FeedBack(
     title,
     "",
-   description,
+    description,
     category,
     100,
     "suggestion"
@@ -145,7 +147,10 @@ for (let i = 0; i < localStorage.length; i++) {
   if (JSON.parse(localStorage.getItem(i)))
     collection.push(JSON.parse(localStorage.getItem(i)));
 }
-
+// if (suugsestionMain)
+    // SuggestionView.upDateUI(renderByStatus("planned"));
+  // if (roadmapMain)
+    // SuggestionView.upDateUI(renderByStatus("live"));
 // console.log(renderByStatus("suggestion"));
 // console.log(collection);
 let init = () => {
@@ -157,7 +162,6 @@ let init = () => {
   request();
   SuggestionView.upDateUI(collection);
   SuggestionView.sort(collection);
-  SuggestionView.upDateUI(renderByStatus("suggestion"));
   DetailView.updateComment(collection);
   DetailView.render();
   DetailView.adjustComment();

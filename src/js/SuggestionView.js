@@ -1,4 +1,5 @@
 class SuuggestionView {
+  main = document.querySelector(".suggestion");
   suggestionCont = document.querySelector(".suggestion__content");
   btn__addFeedback = document.querySelector(".btn--add-feedback");
   btnCancel = document.querySelector(".btn--cancel");
@@ -19,15 +20,6 @@ class SuuggestionView {
   newCategory = document.getElementById("newCategory");
   newStatus = document.getElementById("newStatus");
   constructor() {
-    // console.log(this.feedBacks);
-    // this.renderByStatus("suggestion");
-    // if (this.suggestionSort)
-    //   this.suggestionSort.addEventListener("change", (eve) => {
-    //     // filterSort(collection, suggestionSort.value);
-    //     console.log(this.suggestionSort.value);
-    //     this.filterSort(this.suggestionSort.value);
-    //   });
-    // this.setCurrent(this.feedBacks);
     if (this.btnCancel)
       this.btnCancel.addEventListener("click", () => {
         console.log("Esprit tranquille");
@@ -118,10 +110,11 @@ class SuuggestionView {
     let filterArr = [];
     if (Array.isArray(collection)) {
       filterArr = collection.filter((feedback) => {
-        return feedback.status == status;
+        return feedback != null && feedback.status == status;
       });
     }
     // cleanSuggestCont();
+    console.log(filterArr);
     return filterArr;
   }
   sort(collection) {

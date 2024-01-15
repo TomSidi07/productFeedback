@@ -1,29 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Jost:ital,wght@0,300;0,400;0,600;0,700;1,200;1,300;1,400&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-
-  <title>Frontend Mentor | Product feedback app</title>
-</head>
-
-<body>
-  Go back
-  Roadmap
-
-  Add Feedback
-
-  Planned <!-- Add number here -->
-  Ideas prioritized for research
-
-  In-Progress <!-- Add number here -->
-  Currently being developed
-
-  Live <!-- Add number here -->
-  Released features
-
-</body>
-<html
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Product feedback app</title>
+    <link rel="stylesheet" href="/src/style/normalize.css" />
+    <link rel="stylesheet" href="/src/style/style.css" />
+    <script src="/src/js/app.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="roadmap">
+      <header class="suggestion__header roadmap__header">
+        <div class="roadmap__header__left">
+          <a href="/index.html" class="btn btn--goback2">Go back</a>
+          <h2>Roadmap</h2>
+        </div>
+        <button class="btn suggestion__header__right btn--add-feedback">
+          + Add Feedback
+        </button>
+      </header>
+      <div class="roadmap__content__container">
+        <div class="roadmap__bloc planned-bloc">
+          <div class="roadmap__bloc__header">
+            <h2>Planned (<span class="total--planned">2</span>)</h2>
+            <p>Ideas prioritized for research</p>
+          </div>
+          <div class="roadmap__bloc__content">
+            <a href="" class="card card--roadmap card--planned">
+              <div class="card--roadmap__header">
+                <span class="signal planned-signal"></span>
+                <p>Planned</p>
+              </div>
+              <div href="" class="card--roadmap__content">
+                <div class="header">
+                  <h2 class="feedback-title">Morecomprehensive reports</h2>
+                  <p class="feedBack-descripcrition">
+                    It would be great to see a more detailed breakdown of
+                    solution
+                  </p>
+                  <div class="pan">Feature</div>
+                </div>
+                <div class="content">
+                  <div class="pan uvoptes">123</div>
+                  <div class="comment--pan">
+                    <svg class="icon">
+                      <use
+                        xlink:href="/src/assets/shared/sprite.svg#icon-comments"
+                      ></use>
+                    </svg>
+                    <span class="comment__pan__counter">2</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="" class="card card--roadmap card--planned">
+              <div class="card--roadmap__header">
+                <span class="signal planned-signal"></span>
+                <p>Planned</p>
+              </div>
+              <div href="" class="card--roadmap__content">
+                <div class="header">
+                  <h2 class="feedback-title">Morecomprehensive reports</h2>
+                  <p class="feedBack-descripcrition">
+                    It would be great to see a more detailed breakdown of
+                    solution
+                  </p>
+                  <div class="pan">Feature</div>
+                </div>
+                <div class="content">
+                  <div class="pan uvoptes">123</div>
+                  <div class="comment--pan">
+                    <svg class="icon">
+                      <use
+                        xlink:href="/src/assets/shared/sprite.svg#icon-comments"
+                      ></use>
+                    </svg>
+                    <span class="comment__pan__counter">2</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="roadmap__bloc inprogress-bloc">
+          <div class="roadmap__bloc__header">
+            <h2>In-Progress (<span class="total--inprogress">)</span></h2>
+            <p>Ideas prioritized for research</p>
+          </div>
+          <div class="roadmap__bloc__content">
+            <a class="card card--roadmap card--inprogress">
+              <div class="card--roadmap__header">
+                <span class="signal inprogress-signal"></span>
+                <p>In Progress</p>
+              </div>
+              <div class="card--roadmap__content"></div>
+            </a>
+          </div>
+        </div>
+        <div href="" class="roadmap__bloc live-bloc">
+          <div class="roadmap__bloc__header">
+            <h2>Live (<span class="total--live"></span>)</h2>
+            <p>Ideas prioritized for research</p>
+          </div>
+          <div class="roadmap__bloc__content">
+            <a href="" class="card card--roadmap card--live">
+              <div class="card--roadmap__header">
+                <span class="signal live-signal"></span>
+                <p>Live</p>
+              </div>
+              <div class="card--roadmap__content"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
