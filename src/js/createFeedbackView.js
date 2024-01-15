@@ -46,18 +46,22 @@ class FeedBackView {
     let newFeedBackHTML = document.createElement("a");
     newFeedBackHTML.innerHTML = code;
     newFeedBackHTML.href = "/src/feedback-detail.html";
-    newFeedBackHTML.classList.add("card--suggestion-content", "card","feedback");
+    newFeedBackHTML.classList.add(
+      "card--suggestion-content",
+      "card",
+      "feedback"
+    );
     if (this.suggestionCont) this.suggestionCont.appendChild(newFeedBackHTML);
     if (this.placeholder) this.placeholder.appendChild(newFeedBackHTML);
   }
   get title() {
-    return this.feedbackTitle.value;
+    if (this.feedbackTitle) return this.feedbackTitle.value;
   }
   get category() {
-    return this.feedbackCategory.value;
+    if (this.feedbackCategory) return this.feedbackCategory.value;
   }
-  get comment() {
-    return this.feedbackComment.value;
+  get description() {
+    if (this.feedbackComment) return this.feedbackComment.value;
   }
 
   Handler(func) {

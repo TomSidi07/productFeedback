@@ -1,3 +1,6 @@
+// import SuggestionView from "./SuggestionView";
+
+
 // import createFeedbackView from "./createFeedbackView";
 class DetailView {
   form = document.querySelector(".feedBack-detail-form");
@@ -6,13 +9,42 @@ class DetailView {
   commentContainer = document.querySelector(".feedback-details___content");
   commentCount = document.querySelector(".comment-count");
   inputControl = document.querySelector(".input-control");
+  btnCancel = document.querySelector(".btn--cancel");
   comment__Char__count = document.querySelector(".comment__Char-count");
+  editBtn = document.getElementById("btnEdit");
+  editEnv = document.getElementById("editEnv");
   currentUser = new user(
     "/src/assets/user-images/image-elijah.jpg",
     "Tom",
     "tomsidi07"
   );
-  constructor() {}
+  constructor() {
+    if (this.editBtn) {
+      this.editBtn.addEventListener("click", (eve) => {
+        eve.preventDefault();
+        console.log("Edit Mode");
+        // get object from collection
+        // getFeed();
+        // diplay edit environnement
+        this.showEditMode();
+        this.btnCancel.addEventListener("click", () => {
+          this.editEnv.classList.remove("active");
+        });
+        // Creates new object
+        // createFeedback();
+        // Send object to collection
+        // setFeed();
+        // Create new card
+        // render();
+        // Append it to sugestionCont
+        // updateUI();
+      });
+    }
+  }
+  
+  showEditMode() {
+    this.editEnv.classList.toggle("active");
+  }
   render() {
     if (this.placeholder) {
       this.placeholder.innerHTML = localStorage.getItem("current");
@@ -22,7 +54,7 @@ class DetailView {
   updateComment(collection) {
     if (localStorage.getItem("current")) {
       let { currentFeedbackCode } = localStorage.getItem("current");
-      console.log(currentFeedbackCode)
+      console.log(currentFeedbackCode);
       let currentString = localStorage
         .getItem("current")
         .match(/h2>.+/gi)[0]
@@ -120,10 +152,11 @@ class DetailView {
   }
 }
 class comment {
-  constructor(id, content, user) {
+  constructor(id, content, user, reliedFeedback) {
     this.id = id;
     this.content = content;
     this.user = user;
+    this.reliedFeedback = reliedFeedback;
   }
 }
 

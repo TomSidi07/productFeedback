@@ -29,7 +29,7 @@
           <!-- Go Back-->
           <!-- Edit Feedback -->
           <a href="/index.html" class="btn btn--goback">Go back</a>
-          <a href="" class="btn btn--primary">Edit Feedback</a>
+          <a href="" id="btnEdit" class="btn btn--primary ">Edit Feedback</a>
         </header>
     
       </section>
@@ -48,7 +48,85 @@
           </fieldset>
         </form>
       </section>
+      
     </div>
+    
   </div>
+  <section id="editEnv" class="popup ">
+      <div class="popup__content">
+        <h1>Editing <span class="current-feedback-title">Feedback title</span></h1>
+        <div class="card form-add-container">
+          <div class="card">
+            <div class="suggestion__content">
+              <div class="card card--suggestion-content">
+                <div class="right">
+                  <div class="header">
+                    <h2 class="current-feedback-newTitle">Feedback Title</h2>
+                  </div>
+                  <div class="content">
+                    <p>Add a short, descriptive headline</p>
+                    <input
+                      name="feedbackTitle"
+                      id="newTitle"
+                      class="input-control feedbackTitle"
+                      value="current-feedback-value"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="card card--suggestion-content">
+                <div class="right">
+                  <div class="header">
+                    <h2>Category</h2>
+                  </div>
+                  <div class="content">
+                    <p>Choose a category for your feedback</p>
+
+                    <select
+                      name="feedbackCategory"
+                      id="newCategory"
+                      class="input-control feedbackCategory "
+                    >
+                      <option value="feature">Feature</option>
+                      <option value="bug">Bug</option>
+                      <option value="enhancement">Enhancement</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="card card--suggestion-content">
+                <div class="right">
+                  <div class="header">
+                    <h2>Update Status</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Change feature state
+                    </p>
+                    <select
+                      name="feedbackCategory"
+                      id="newStatus"
+                      class="input-control feedbackCategory"
+                    >
+                      <option value="suggestion">Suggestion</option>
+                      <option value="planned">Planned</option>
+                      <option value="inprogress">In-Progress</option>
+                      <option value="live">Live</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="create-Feedback-area">
+                <button class="btn btn--accent btn--delete">Delete</button>
+                <button class="btn btn--default btn--cancel">Cancel</button>
+                <button id="saveChanges" class="btn add-feedback">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 </body>
 <html
