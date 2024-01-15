@@ -11,25 +11,70 @@
 </head>
 
 <body>
-  Go Back
-
-  Create New Feedback
-
-  Feedback Title
-  Add a short, descriptive headline
-
-  Category
-  Choose a category for your feedback
-  Feature
-  UI
-  UX
-  Enhancement
-  Bug
-
-  Feedback Detail
-  Include any specific comments on what should be improved, added, etc.
-
-  Cancel
-  Add Feedback
+  <div class="popup">
+      <div class="popup__content">
+        <h1>Create New Feedback</h1>
+        <div class="card form-add-container">
+          <div class="card">
+            <div class="suggestion__content">
+              <div class="card card--suggestion-content">
+                <div class="right">
+                  <div class="header">
+                    <h2>Feedback Title</h2>
+                  </div>
+                  <div class="content">
+                    <p>Add a shhort, descriptive headline</p>
+                    <input
+                      name="feedbackTitle"
+                      id="feedbackTitle"
+                      class="input-control feedbackTitle"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="card card--suggestion-content">
+                <div class="right">
+                  <div class="header">
+                    <h2>Category</h2>
+                  </div>
+                  <div class="content">
+                    <p>Choose a category for your feedback</p>
+                    <input
+                      name="feedbackCategory"
+                      id="feedbackCategory"
+                      class="input-control feedbackCategory"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="card card--suggestion-content">
+                <div class="right">
+                  <div class="header">
+                    <h2>Feedback Detail</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Include any specific comments on what should be improved,
+                      added, etc.
+                    </p>
+                    <textarea
+                      name="commentFeedback"
+                      id="commentFeedback"
+                      class="input-control commentFeedback"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="create-Feedback-area">
+                <button class="btn btn--default btn--cancel">Cancel</button>
+                <button id="add-feedback" class="btn add-feedback">
+                  Add Feedback
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 <html
