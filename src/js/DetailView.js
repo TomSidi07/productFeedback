@@ -56,7 +56,7 @@ class DetailView {
   updateComment(collection) {
     if (localStorage.getItem("current")) {
       let { currentFeedbackCode } = localStorage.getItem("current");
-      console.log(currentFeedbackCode);
+      // console.log(currentFeedbackCode);
       let currentString = localStorage
         .getItem("current")
         .match(/h2>.+/gi)[0]
@@ -82,7 +82,7 @@ class DetailView {
                 );
                 this.commentContainer.append(commentHTML);
                 commentHTML.innerHTML = this.addHtml(comment);
-                console.log(commentHTML);
+                // console.log(commentHTML);
               }
             });
         }
@@ -140,11 +140,14 @@ class DetailView {
     if (this.submitBtn)
       this.submitBtn.addEventListener("click", (eve) => {
         eve.preventDefault();
-        let newCommentVal = new comment(1, "test", this.currentUser);
+        let newCommentVal = new comment(
+          1,
+          this.inputControl.value,
+          this.currentUser
+        );
         this.setComment(newCommentVal);
-
-        // commentObj.content = this.inputControl.value;
-        // console.log(commentObj);
+        this.setCurrentComment();
+        this.cleanCurrentComment();
       });
     if (this.commentContainer)
       this.getComment().forEach((el) => {
@@ -159,6 +162,10 @@ class DetailView {
       });
     // console.log("submit");
   }
+  cleanCurrentComment() {
+    console.log("comment cleaned");
+    return localStorage.removeItem("comment");
+  }
   getComment() {
     return JSON.parse(localStorage.getItem("comment") || "[]");
   }
@@ -169,23 +176,18 @@ class DetailView {
       return localStorage.setItem("comment", JSON.stringify(commentArray));
     }
   }
-  setCurrentComment(comment) {
-    const currentFeedback = comment.reliedFeedback;
-    if (currentFeedback === null)
-      return console.log(
-        "You any selected feedback go back to select a suggestion Bro !!!"
-      );
-    if (currentFeedback.comments) {
-      currentFeedback.comments.push(comment);
-    } else {
-      currentFeedback.comments = [];
-      currentFeedback.comments.push(comment);
+  setCurrentComment() {
+    let currentObj = JSON.parse(localStorage.getItem("currentObj"));
+    let currentComment = JSON.parse(localStorage.getItem("comment"));
+    if (currentObj.comments) {
+      currentObj.comments.push(...currentComment);
     }
-    console.log(currentFeedback);
-    return localStorage.setItem(
-      currentFeedback.id,
-      JSON.stringify(currentFeedback)
-    );
+    if (!currentObj.comments) {
+      currentObj.comments = [];
+      currentObj.comments.push(currentComment);
+    }
+
+    return localStorage.setItem(currentObj.id, JSON.stringify(currentObj));
   }
 }
 class comment {

@@ -666,8 +666,13 @@ p {
   width: 350px;
   height: 272px;
   display: flex;
+  justify-content: space-evenly;
   flex-direction: column;
   /* background-color: #2ecc71; */
+}
+.card--roadmap .content{
+  display: flex;
+  justify-content: space-between;
 }
 .card--roadmap .signal {
   width: 1rem;

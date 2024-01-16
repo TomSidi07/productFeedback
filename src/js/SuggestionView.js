@@ -1,4 +1,4 @@
-class SuuggestionView {
+export class SuuggestionView {
   main = document.querySelector(".suggestion");
   suggestionCont = document.querySelector(".suggestion__content");
   btn__addFeedback = document.querySelector(".btn--add-feedback");
@@ -19,6 +19,7 @@ class SuuggestionView {
   newTitle = document.getElementById("newTitle");
   newCategory = document.getElementById("newCategory");
   newStatus = document.getElementById("newStatus");
+  suggestionTotal = document.querySelector(".suggestion-total ");
   constructor() {
     if (this.btnCancel)
       this.btnCancel.addEventListener("click", () => {
@@ -40,8 +41,8 @@ class SuuggestionView {
           console.log(currentObj);
         });
       });
-    console.log(this.getCurrentObj());
-    console.log(this.btnCancel);
+    // console.log(this.getCurrentObj());
+    // console.log(this.btnCancel);
   }
   setCurrent(feedbacks, collection) {
     feedbacks.forEach((feedback) => {
@@ -66,7 +67,7 @@ class SuuggestionView {
   }
   getCurrentObj() {
     let currentObj = JSON.parse(localStorage.getItem("currentObj") || "{}");
-    console.log(currentObj);
+    // console.log(currentObj);
     return currentObj;
   }
   saveChange(Obj) {

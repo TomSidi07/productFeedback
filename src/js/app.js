@@ -1,3 +1,4 @@
+import CommentView from "./CommentView.js";
 import DetailView from "./DetailView.js";
 import RoadmapView from "./RoadmapView.js";
 import SuggestionView from "./SuggestionView.js";
@@ -34,7 +35,8 @@ async function request() {
           response.productRequests.forEach((feedback) => {
             // addtoLs();
             // console.log(feedback);
-            localStorage.setItem(feedback.id, JSON.stringify(feedback));
+            if (!localStorage.getItem(feedback.id))
+              localStorage.setItem(feedback.id, JSON.stringify(feedback));
           });
           feedBacks = document.querySelectorAll(".feedback");
           SuggestionView.setCurrent(feedBacks, collection);
@@ -148,9 +150,9 @@ for (let i = 0; i < localStorage.length; i++) {
     collection.push(JSON.parse(localStorage.getItem(i)));
 }
 // if (suugsestionMain)
-    // SuggestionView.upDateUI(renderByStatus("planned"));
-  // if (roadmapMain)
-    // SuggestionView.upDateUI(renderByStatus("live"));
+// SuggestionView.upDateUI(renderByStatus("planned"));
+// if (roadmapMain)
+// SuggestionView.upDateUI(renderByStatus("live"));
 // console.log(renderByStatus("suggestion"));
 // console.log(collection);
 let init = () => {
