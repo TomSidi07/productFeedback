@@ -139,7 +139,7 @@ class DetailView {
       });
     if (this.submitBtn)
       this.submitBtn.addEventListener("click", (eve) => {
-        eve.preventDefault();
+        // eve.preventDefault();
         let newCommentVal = new comment(
           1,
           this.inputControl.value,

@@ -13,7 +13,7 @@ let IdCount;
 let popup = document.querySelector(".popup");
 let categories = document.querySelectorAll(".btn--cat");
 let status = document.querySelectorAll(".btn--stat");
-
+let suggestionTotal = document.querySelector(".suggestion-total ");
 let url = "/data.json";
 // collection de feedback
 let collection = [];
@@ -32,6 +32,8 @@ async function request() {
           // collection = [...response.productRequests];
 
           IdCount = collection.length++;
+          SuggestionView.upDateUI(response.productRequests);
+
           response.productRequests.forEach((feedback) => {
             // addtoLs();
             // console.log(feedback);
@@ -65,13 +67,34 @@ async function request() {
     console.log(error);
   }
 }
-
+// Copy to collection
+for (let i = 0; i < localStorage.length; i++) {
+  if (JSON.parse(localStorage.getItem(i)))
+    collection.push(JSON.parse(localStorage.getItem(i)));
+}
 // Events
 status.forEach((btn) => {
   btn.addEventListener("click", (eve) => {
     SuggestionView.filterFeeds(collection, btn.textContent);
   });
 });
+if (suggestionTotal)
+  suggestionTotal.innerHTML = renderByStatus("suggestion").length;
+console.log();
+if (collection.length == 0) {
+  suggestionCont.innerHTML = `<div class="emptyFeedback">
+      <img src="/src/assets/suggestions/illustration-empty.svg" alt="">
+      <h2>There is no feedback yet</h2>
+      <p>
+        Got a suggestion? Found a bug that needs to be squashed? We love hearing
+        about new ideas to improve our app.
+      </p>
+      <button class="btn suggestion__header__right btn--add-feedback">
+        + Add Feedback
+      </button>
+    </div>`;
+}
+// Add FEEDBACK
 class FeedBack {
   id;
   title;
@@ -145,10 +168,7 @@ function renderByStatus(status) {
   // cleanSuggestCont();
   return filterArr;
 }
-for (let i = 0; i < localStorage.length; i++) {
-  if (JSON.parse(localStorage.getItem(i)))
-    collection.push(JSON.parse(localStorage.getItem(i)));
-}
+
 // if (suugsestionMain)
 // SuggestionView.upDateUI(renderByStatus("planned"));
 // if (roadmapMain)
@@ -160,8 +180,8 @@ let init = () => {
 
   FeedbackView.Handler(createFeedback);
   // FeedbackView.render();
-  // cleanSuggestCont();
   request();
+  
   SuggestionView.upDateUI(collection);
   SuggestionView.sort(collection);
   DetailView.updateComment(collection);

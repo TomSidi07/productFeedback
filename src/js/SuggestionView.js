@@ -80,6 +80,7 @@ export class SuuggestionView {
   }
 
   upDateUI(collection) {
+    if (this.suggestionCont) this.suggestionCont.innerHTML = "";
     collection.forEach((data) => {
       let suggestion__card__code = `<div class="left">
               <a href="#"><btn class="pan">${data.upvotes}</btn></a>
