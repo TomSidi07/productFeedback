@@ -30,17 +30,43 @@ async function request() {
       .then((response) => {
         try {
           // collection = [...response.productRequests];
-
+          console.log("req");
           IdCount = collection.length++;
           SuggestionView.upDateUI(response.productRequests);
-
+          localStorage.setItem(
+            "collection",
+            JSON.stringify(response.productRequests)
+          );
           response.productRequests.forEach((feedback) => {
-            // addtoLs();
-            // console.log(feedback);
             if (!localStorage.getItem(feedback.id))
               localStorage.setItem(feedback.id, JSON.stringify(feedback));
           });
           feedBacks = document.querySelectorAll(".feedback");
+          let upvotesBtns = document.querySelectorAll(".pan.uvoptes");
+          console.log(upvotesBtns);
+          if (upvotesBtns)
+            upvotesBtns.forEach((upvotesBtn) => {
+              upvotesBtn.addEventListener("click", (eve) => {
+                eve.preventDefault();
+                eve.target.classList.add("active");
+                if (eve.target.classList.contains("active")) {
+                  console.log("active");
+                  let CureentFeedback = JSON.parse(
+                    localStorage.getItem("currentObj") || "{}"
+                  );
+                  CureentFeedback.upvotes += 1;
+                  localStorage.setItem(
+                    CureentFeedback.id,
+                    JSON.stringify(CureentFeedback)
+                  );
+                  localStorage.setItem(
+                    "currentObj",
+                    JSON.stringify(CureentFeedback)
+                  );
+                }
+              });
+              // console.log(upvotesBtn);
+            });
           SuggestionView.setCurrent(feedBacks, collection);
 
           if (btn__addFeedback)
@@ -67,6 +93,27 @@ async function request() {
     console.log(error);
   }
 }
+request();
+let UpdatedCollection = [];
+for (let i = 0; i < localStorage.length; i++) {
+  let feedFromLS = JSON.parse(localStorage.getItem(i));
+  if (feedFromLS != null) UpdatedCollection.push(feedFromLS);
+}
+let prom = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    SuggestionView.upDateUI(UpdatedCollection);
+    let feedBacks = document.querySelectorAll(".feedback");
+    let roadmapCards = document.querySelectorAll(".card--roadmap ");
+    let upvotes = document.querySelectorAll(".pan.upvotes");
+    SuggestionView.setCurrent(feedBacks, UpdatedCollection);
+    SuggestionView.setCurrentRoadMap(roadmapCards, UpdatedCollection);
+    SuggestionView.showCurrentComments();
+
+    console.log(upvotes);
+    // console.log(feedBacks)
+    console.log("okey");
+  }, 300);
+});
 // Copy to collection
 for (let i = 0; i < localStorage.length; i++) {
   if (JSON.parse(localStorage.getItem(i)))
@@ -75,7 +122,12 @@ for (let i = 0; i < localStorage.length; i++) {
 // Events
 status.forEach((btn) => {
   btn.addEventListener("click", (eve) => {
-    SuggestionView.filterFeeds(collection, btn.textContent);
+    status.forEach((btns) => {
+      btns.classList.remove("active");
+      eve.target.classList.toggle("active");
+    });
+    console.log(btn);
+    SuggestionView.filterFeeds(collection, btn.textContent.toLowerCase());
   });
 });
 if (suggestionTotal)
@@ -105,10 +157,10 @@ class FeedBack {
   description;
   constructor(
     title,
-    comments = undefined,
+    comments = [],
     description,
     category,
-    upvotes,
+    upvotes = 0,
     status
   ) {
     this.id = collection.length;
@@ -128,38 +180,16 @@ function createFeedback() {
   let { title, category, description } = FeedbackView;
   let newFeedback = new FeedBack(
     title,
-    "",
+    [],
     description,
     category,
-    100,
+    0,
     "suggestion"
   );
   collection.push(newFeedback);
   FeedbackView.render(newFeedback);
   localStorage.setItem(newFeedback.id, JSON.stringify(newFeedback));
 }
-// function addtoLs(feedback) {
-//   let data = getFromLs(feedback.id);
-//   if (Array.isArray(data)) {
-//     data.push(feedback);
-//     return localStorage.setItem(feedback.id, JSON.stringify(data));
-//   }
-// }
-// function getFromLs(feedbackID) {
-//   return JSON.parse(localStorage.getItem(feedbackID || "[]"));
-// }
-
-// function filterFeeds(collection, value) {
-//   suggestionCont.innerHTML = "";
-//   let fiteredArr = collection.filter((feedback) => {
-//     return (
-//       feedback.status === value.toLowerCase() ||
-//       feedback.category === value.toLowerCase()
-//     );
-//   });
-//   console.log(fiteredArr);
-//   upDateUI(fiteredArr);
-// }
 
 function renderByStatus(status) {
   let filterArr = collection.filter((feedback) => {
@@ -169,23 +199,18 @@ function renderByStatus(status) {
   return filterArr;
 }
 
-// if (suugsestionMain)
-// SuggestionView.upDateUI(renderByStatus("planned"));
-// if (roadmapMain)
-// SuggestionView.upDateUI(renderByStatus("live"));
-// console.log(renderByStatus("suggestion"));
-// console.log(collection);
+// console.log(UpdatedCollection);
 let init = () => {
   // SuggestionView.setCurrent(feedBacks, collection);
 
   FeedbackView.Handler(createFeedback);
   // FeedbackView.render();
-  request();
-  
-  SuggestionView.upDateUI(collection);
+
+  // SuggestionView.upDateUI(collection);
+  console.log(UpdatedCollection);
   SuggestionView.sort(collection);
-  DetailView.updateComment(collection);
+  // DetailView.updateComment(collection);
   DetailView.render();
-  DetailView.adjustComment();
+  // DetailView.adjustComment();
 };
 init();

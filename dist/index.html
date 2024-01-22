@@ -1,113 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="/src/js/app.js" type="module" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Jost:ital,wght@0,300;0,400;0,600;0,700;1,200;1,300;1,400&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon-32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/f2908ebb19bc72387ecaf1921e0171f0.png">
     <title>Frontend Mentor | Product feedback app</title>
-    <link rel="stylesheet" href="/src/style/normalize.css" />
-    <link rel="stylesheet" href="/src/style/style.css" />
+    <link rel="stylesheet" href="/1ebac633a7957f24e95e4abab5b403e1.css">
+    <link rel="stylesheet" href="/2aedc0a08f7b98d05b2cb98f8acb7da0.css">
+    <script src="/716f933924045ede773e81a677c12427.js" type="module" defer=""></script>
   </head>
   <body>
     <!-- Sidebar -->
     <div class="container suggestion">
-      <aside class="aside">
-        <div class="card card-aside aside__title nav-top ">
-          <div class="aside__title__text-container">
-            <h3 class="aside__title__text">Frontend Mentor</h3>
-            <p class="aside__title__text">Feedback Board</p>
-          </div>
-          <button class="btn--hamberger ">
-            <span class="line line1"></span><span class="line line2"></span><span class="line line3"></span>
-          </button>
+      <div class="aside">
+        <div class="card card-aside aside__title">
+          <h3 class="aside__title__text">lorem lorem</h3>
+          <p>Lorem ipsum dolor</p>
         </div>
-        <div class="nav-bottom ">
-          <div class="nav-bottom__left"></div>
-          <div class="nav-bottom__container">
-            <div class="card card-aside aside__category">
-              <div class="aside__cat__header">
-                <button class="pan pan--primary btn--cat">All</button>
-                <button class="pan btn--cat">UI</button>
-                <button class="pan btn--cat">UX</button>
-              </div>
-              <div class="aside__cat__content">
-                <button class="pan btn--stat">Enhancement</button>
-                <button class="pan btn--stat">Bug</button>
-                <button class="pan btn--stat">Feature</button>
-              </div>
-            </div>
-            <div id="aside__roadmap" class="card card-aside aside__roadmap">
-              <header class="aside__roadmap__header">
-                <h2 class="roadmap__heading">Roadmap</h2>
-                <a class="view" href="./src/roadmap.html">view</a>
-              </header>
-              <header class="aside__roadmap__content">
-                <ul class="list">
-                  <li class="list__item">
-                    <a href="" class="list__link">
-                      <span class="signal planned-signal"></span>Planned</a
-                    >
-                    <span class="roadmap__count total--planned">0</span>
-                  </li>
-                  <li class="list__item">
-                    <a href="" class="list__link"
-                      ><span class="signal inprogress-signal"></span>In-progress</a
-                    >
-                    <span class="roadmap__count total--inprogress">0</span>
-                  </li>
-                  <li class="list__item">
-                    <a href="" class="list__link"
-                      ><span class="signal live-signal"></span>Live</a
-                    >
-                    <span class="roadmap__count total--live">0</span>
-                  </li>
-                </ul>
-              </header>
-            </div>
+        <div class="card card-aside aside__category">
+          <div class="aside__cat__header">
+            <button class="pan pan--primary btn--cat">All</button>
+            <button class="pan btn--cat">UI</button>
+            <button class="pan btn--cat">UX</button>
+          </div>
+          <div class="aside__cat__content">
+            <button class="pan btn--stat">Enhancement</button>
+            <button class="pan btn--stat">Bug</button>
+            <button class="pan btn--stat">Feature</button>
           </div>
         </div>
-      </aside>
-      <main id="bloc--suggestion" class="bloc bloc--suggestion">
-        <div id="suggestion__header" class="suggestion__header">
+        <div class="card card-aside aside__roadmap">
+          <header class="aside__roadmap__header">
+            <h2 class="roadmap__heading">Roadmap</h2>
+            <a class="view" href="/e826b983ece8d0e0d153f590792602af.html">view</a>
+          </header>
+          <header class="aside__roadmap__content">
+            <ul class="list">
+              <li class="list__item">
+                <a href="" class="list__link">
+                  <span class="signal planned-signal"></span>Planned</a>
+                <span class="total--planned">0</span>
+              </li>
+              <li class="list__item">
+                <a href="" class="list__link"><span class="signal inprogress-signal"></span>In-progress</a>
+                <span class="total--inprogress">0</span>
+              </li>
+              <li class="list__item">
+                <a href="" class="list__link"><span class="signal live-signal"></span>Live</a>
+                <span class="total--live">0</span>
+              </li>
+            </ul>
+          </header>
+        </div>
+      </div>
+      <div class="bloc bloc--suggestion">
+        <div class="suggestion__header">
           <div class="suggestion__header__left">
             <span class="suggestion__header__headline">
               <span class="icon"></span>
               <span class="suggestion-total count">0</span>
-              <h2>Suggestions</h2></span
-            >
+              <h2>Suggestions</h2></span>
             <div class="suggestion-sort collapseContainer">
               <button class="collappseHeader">
                 <p>Sort by :</p>
                 <a class="active-sort">Most Upvotes</a>
                 <svg class="icons">
-                  <use
-                    xlink:href="/src/assets/shared/sprite.svg#icon-arrow-down"
-                  ></use>
+                  <use xlink:href="/a12c2e9116ac9d89c00993eaa4b0ca57.svg#icon-arrow-down"></use>
                 </svg>
               </button>
               <ul id="suggestionSort" class="collapseContent">
                 <li class="sortItem">
-                  <a href="" class="sortItemBtn active" data-value="mostupvote"
-                    >Most Upvote</a
-                  >
+                  <a href="" class="sortItemBtn active" data-value="mostupvote">Most Upvote</a>
                 </li>
                 <li class="sortItem">
-                  <a href="" class="sortItemBtn" data-value="leastupvote"
-                    >Least Upvote</a
-                  >
+                  <a href="" class="sortItemBtn" data-value="leastupvote">Least Upvote</a>
                 </li>
                 <li class="sortItem">
-                  <a href="" class="sortItemBtn" data-value="mostcomment"
-                    >Most Comments</a
-                  >
+                  <a href="" class="sortItemBtn" data-value="mostcomment">Most Comments</a>
                 </li>
                 <li class="sortItem">
                   <a class="sortItemBtn" data-value="leastcomment">
@@ -149,11 +122,9 @@
             </div>
           </div> -->
         </div>
-      </main>
+      </div>
     </div>
-    
-        </div>
-    <section class="popup">
+    <div class="popup">
       <div class="popup__content">
         <h1>Create New Feedback</h1>
         <div class="card form-add-container">
@@ -166,11 +137,7 @@
                   </div>
                   <div class="content">
                     <p>Add a short, descriptive headline</p>
-                    <input
-                      name="feedbackTitle"
-                      id="feedbackTitle"
-                      class="input-control feedbackTitle"
-                    />
+                    <input name="feedbackTitle" id="feedbackTitle" class="input-control feedbackTitle">
                   </div>
                 </div>
               </div>
@@ -182,11 +149,7 @@
                   <div class="content">
                     <p>Choose a category for your feedback</p>
 
-                    <select
-                      name="feedbackCategory"
-                      id="feedbackCategory"
-                      class="input-control feedbackCategory"
-                    >
+                    <select name="feedbackCategory" id="feedbackCategory" class="input-control feedbackCategory">
                       <option value="feature">Feature</option>
                       <option value="bug">Bug</option>
                       <option value="enhancement">Enhancement</option>
@@ -204,11 +167,7 @@
                       Include any specific comments on what should be improved,
                       added, etc.
                     </p>
-                    <textarea
-                      name="commentFeedback"
-                      id="commentFeedback"
-                      class="input-control commentFeedback"
-                    ></textarea>
+                    <textarea name="commentFeedback" id="commentFeedback" class="input-control commentFeedback"></textarea>
                   </div>
                 </div>
               </div>
@@ -222,7 +181,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
     <!-- Add number here -->
 
     <!-- Add number here -->

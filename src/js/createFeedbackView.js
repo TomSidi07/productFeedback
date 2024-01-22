@@ -28,6 +28,8 @@ class FeedBackView {
     //   this.upvotes = upvotes;
   }
   render(newFeedback) {
+    let comments = newFeedback.comments || 0;
+    let commentsLength = comments.length;
     let code = `<div class="left">
        
               <a href="#"><btn class="pan"> ${newFeedback.upvotes} </btn></a>
@@ -42,6 +44,15 @@ class FeedBackView {
                 </p>
                <a href="#"> <btn class="pan">${newFeedback.category}</btn></a>
               </div>
+              <div class="card--comment">
+    <div class="comment--pan">
+    <svg class="icon">
+      <use
+        xlink:href="/src/assets/shared/sprite.svg#icon-comments"
+      ></use>
+    </svg>
+    <span class="comment__pan__counter">${commentsLength || 0}</span>
+  </div>
             </div>`;
     let newFeedBackHTML = document.createElement("a");
     newFeedBackHTML.innerHTML = code;
