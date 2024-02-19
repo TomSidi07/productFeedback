@@ -11,7 +11,7 @@ class DetailView {
   editEnv = document.getElementById("editEnv");
   collectionC = [];
   currentUser = new user(
-    "/src/assets/user-images/image-elijah.jpg",
+    "./src/assets/user-images/image-elijah.jpg",
     "Tom",
     "tomsidi07"
   );
