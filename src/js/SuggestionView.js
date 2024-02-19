@@ -174,10 +174,10 @@ class SuuggestionView {
               </div>
               </div>
               <div class="card--comment">
-                <a href="/src/feedback-detail.html" class="comment--pan">
+                <a href="./src/feedback-detail.html" class="comment--pan">
                 <svg class="icon">
                   <use
-                    xlink:href="/src/assets/shared/sprite.svg#icon-comments"
+                    xlink:href="./src/assets/shared/sprite.svg#icon-comments"
                   ></use>
                 </svg>
                 <span class="comment__pan__counter">${
@@ -187,7 +187,7 @@ class SuuggestionView {
               </a>
             </div>`;
       let suggestionHtml = document.createElement("a");
-      suggestionHtml.href = "/src/feedback-detail.html";
+      suggestionHtml.href = "./src/feedback-detail.html";
       suggestionHtml.innerHTML = suggestion__card__code;
       suggestionHtml.classList.add(
         "card--suggestion-content",

@@ -14,7 +14,7 @@ let popup = document.querySelector(".popup");
 let categories = document.querySelectorAll(".btn--cat");
 let status = document.querySelectorAll(".btn--stat");
 let suggestionTotal = document.querySelector(".suggestion-total ");
-let url = "/data.json";
+let url = "./data.json";
 // collection de feedback
 let collection = [];
 let feedBacks;

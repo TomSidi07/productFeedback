@@ -1,6 +1,6 @@
 @font-face {
   font-family: jost;
-  src: url(/src/assets/Jost-VariableFont_wght.ttf);
+  src: url("../assets/Jost-VariableFont_wght.ttf");
 }
 :root {
   --color-primary: #4661e6;
@@ -110,7 +110,7 @@ span {
   border-radius: var(--border-radius);
 }
 .aside__title {
-  background-image: url("/src/assets/suggestions/desktop/background-header.png");
+  background-image: url("../assets/suggestions/desktop/background-header.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -377,7 +377,7 @@ span {
   border-color: lightgray;
 }
 .collapseContent .sortItem .sortItemBtn.active::after {
-  content: url("/src/assets/shared/icon-check.svg");
+  content: url("../assets/shared/icon-check.svg");
 }
 .sortItem:last-of-type {
   border: none;
@@ -461,7 +461,7 @@ span {
   align-items: center;
   width: 50px;
   justify-content: center;
-  background: url(/src/assets/suggestions/icon-suggestions.svg);
+  background: url("../assets/suggestions/icon-suggestions.svg");
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: center;
@@ -542,7 +542,7 @@ span {
   flex-direction: row;
 }
 .btn--goback2::before {
-  content: url("/src/assets/shared/icon-arrow-left.svg");
+  content: url("../assets/shared/icon-arrow-left.svg");
   display: inline-block;
   text-decoration: none;
   margin-right: 2rem;
@@ -580,7 +580,7 @@ span {
   text-transform: capitalize;
 }
 .card--suggestion-content .left .pan::before {
-  content: url(/src/assets/shared/icon-arrow-up.svg);
+  content: url("../assets/shared/icon-arrow-up.svg");
 }
 .card--suggestion-content .right .header h2 {
   margin: 0;
@@ -978,7 +978,7 @@ p {
   padding: 1rem;
 }
 .uvoptes::before {
-  content: url("/src/assets/shared/icon-arrow-up.svg");
+  content: url("../assets/shared/icon-arrow-up.svg");
 }
 .comment--pan {
   display: flex;
@@ -1064,7 +1064,7 @@ p {
   color: #fff;
 }
 .pan.uvoptes.active::before {
-  content: url(/src/assets/shared/icon-arrow-up-WHITE.svg);
+  content: url("../assets/shared/icon-arrow-up-WHITE.svg");
 }
 .feedback,
 .current-feedback {
