@@ -1,0 +1,108 @@
+<%- include('partials/head.ejs') %>
+<body>
+  <div class="roadmap">
+    <header class="suggestion__header roadmap__header">
+      <div class="roadmap__header__left">
+        <a href="/" class="btn btn--goback2">Go back</a>
+        <h2>Roadmap</h2>
+      </div>
+      <button class="btn suggestion__header__right btn--add-feedback">
+        + Add Feedback
+      </button>
+    </header>
+    <div class="roadmap__content__container">
+      <div class="roadmap__bloc planned-bloc">
+        <div class="roadmap__bloc__header">
+          <h2>Planned (<span class="total--planned">0</span>)</h2>
+          <p>Ideas prioritized for research</p>
+        </div>
+        <div class="roadmap__bloc__content">
+          <!-- <a href="" class="card card--roadmap card--planned">
+            <div class="card--roadmap__header">
+              <span class="signal planned-signal"></span>
+              <p>Planned</p>
+            </div>
+            <div href="" class="card--roadmap__content">
+              <div class="header">
+                <h2 class="feedback-title">Morecomprehensive reports</h2>
+                <p class="feedBack-descripcrition">
+                  It would be great to see a more detailed breakdown of solution
+                </p>
+                <div class="pan">Feature</div>
+              </div>
+              <div class="content">
+                <div class="pan uvoptes">123</div>
+                <div class="comment--pan">
+                  <svg class="icon">
+                    <use
+                      xlink:href="/src/assets/shared/sprite.svg#icon-comments"
+                    ></use>
+                  </svg>
+                  <span class="comment__pan__counter">2</span>
+                </div>
+              </div>
+            </div>
+          </a> -->
+          <!-- <a href="" class="card card--roadmap card--planned">
+            <div class="card--roadmap__header">
+              <span class="signal planned-signal"></span>
+              <p>Planned</p>
+            </div>
+            <div href="" class="card--roadmap__content">
+              <div class="header">
+                <h2 class="feedback-title">Morecomprehensive reports</h2>
+                <p class="feedBack-descripcrition">
+                  It would be great to see a more detailed breakdown of solution
+                </p>
+                <div class="pan">Feature</div>
+              </div>
+              <div class="content">
+                <div class="pan uvoptes">123</div>
+                <div class="comment--pan">
+                  <svg class="icon">
+                    <use
+                      xlink:href="/src/assets/shared/sprite.svg#icon-comments"
+                    ></use>
+                  </svg>
+                  <span class="comment__pan__counter">2</span>
+                </div>
+              </div>
+            </div>
+          </a> -->
+        </div>
+      </div>
+      <div class="roadmap__bloc inprogress-bloc">
+        <div class="roadmap__bloc__header">
+          <h2>In-Progress (<span class="total--inprogress">0</span>)</h2>
+          <p>Ideas prioritized for research</p>
+        </div>
+        <div class="roadmap__bloc__content">
+          <!-- <a class="card card--roadmap card--inprogress">
+            <div class="card--roadmap__header">
+              <span class="signal inprogress-signal"></span>
+              <p>In Progress</p>
+            </div>
+            <div class="card--roadmap__content"></div>
+          </a> -->
+        </div>
+      </div>
+      <div href="" class="roadmap__bloc live-bloc">
+        <div class="roadmap__bloc__header">
+          <h2>Live (<span class="total--live">0</span>)</h2>
+          <p>Ideas prioritized for research</p>
+        </div>
+        <div class="roadmap__bloc__content">
+          <!-- <a href="" class="card card--roadmap card--live">
+            <div class="card--roadmap__header">
+              <span class="signal live-signal"></span>
+              <p>Live</p>
+            </div>
+            <div class="card--roadmap__content"></div>
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <%-include('partials/pop-new-fdback.ejs')%>
+</body>
+<%-include('partials/footer.ejs')%>

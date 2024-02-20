@@ -17,42 +17,51 @@
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
-  <div class="container">
-    <div class="feedBack-detail">
-      <section class="feedback-details___head">
-        <header class="feedback-details___header">
-          <!-- Go Back-->
-          <!-- Edit Feedback -->
-          <a href="../index.html" class="btn btn--goback">Go back</a>
-          <a href="" id="btnEdit" class="btn btn--primary ">Edit Feedback</a>
-        </header>
-    
-      </section>
-      <section class="current-feedback">
-      </section>
-      <section class="feedback-details___content">
-       <h2 class="feedback-details___content__heading"><span class="comment-count">0</span>Comments</h2>
-      </section>
-      <section class="feedback-details___control">
-        <h2>Add Comment</h2>
-        <form class="feedBack-detail-form">
-          <textarea name="comment" id="comment" class="input-control" placeholder="Type your comment here"></textarea>
-          <fieldset class="submit-area">
-            <p ><span class="comment__Char-count">225</span > characters left</p>
-            <button href="" class="btn btn--default btn--submit-comment">Post Comment</button>
-          </fieldset>
-        </form>
-      </section>
-      
+    <div class="container">
+      <div class="feedBack-detail">
+        <section class="feedback-details___head">
+          <header class="feedback-details___header">
+            <!-- Go Back-->
+            <!-- Edit Feedback -->
+            <a href="/" class="btn btn--goback">Go back</a>
+            <a href="" id="btnEdit" class="btn btn--primary">Edit Feedback</a>
+          </header>
+        </section>
+        <section class="current-feedback"></section>
+        <section class="feedback-details___content">
+          <h2 class="feedback-details___content__heading">
+            <span class="comment-count">0</span>Comments
+          </h2>
+        </section>
+        <section class="feedback-details___control">
+          <h2>Add Comment</h2>
+          <form class="feedBack-detail-form">
+            <textarea
+              name="comment"
+              id="comment"
+              class="input-control"
+              placeholder="Type your comment here"
+            ></textarea>
+            <fieldset class="submit-area">
+              <p>
+                <span class="comment__Char-count">225</span> characters left
+              </p>
+              <button href="" class="btn btn--default btn--submit-comment">
+                Post Comment
+              </button>
+            </fieldset>
+          </form>
+        </section>
+      </div>
     </div>
-    
-  </div>
-  <section id="editEnv" class="popup ">
+    <section id="editEnv" class="popup">
       <div class="popup__content">
-        <h1>Editing <span class="current-feedback-title">Feedback title</span></h1>
+        <h1>
+          Editing <span class="current-feedback-title">Feedback title</span>
+        </h1>
         <div class="card form-add-container">
           <div class="card">
-            <div class="edit__container ">
+            <div class="edit__container">
               <div class="card card--suggestion-content">
                 <div class="right">
                   <div class="header">
@@ -80,7 +89,7 @@
                     <select
                       name="feedbackCategory"
                       id="newCategory"
-                      class="input-control feedbackCategory "
+                      class="input-control feedbackCategory"
                     >
                       <option value="feature">Feature</option>
                       <option value="bug">Bug</option>
@@ -95,9 +104,7 @@
                     <h2>Update Status</h2>
                   </div>
                   <div class="content">
-                    <p>
-                      Change feature state
-                    </p>
+                    <p>Change feature state</p>
                     <select
                       name="feedbackCategory"
                       id="newStatus"
@@ -123,5 +130,5 @@
         </div>
       </div>
     </section>
-</body>
-<html
+  </body>
+</html>

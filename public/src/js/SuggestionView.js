@@ -34,7 +34,7 @@ class SuuggestionView {
   commentContainer = document.querySelector(".feedback-details___content");
   commentCount = document.querySelector(".comment-count");
   currentUser = new user(
-    "/src/assets/user-images/image-elijah.jpg",
+    "assets/user-images/image-elijah.jpg",
     "Tom",
     "tomsidi07"
   );
@@ -124,8 +124,7 @@ class SuuggestionView {
         // eve.preventDefault();
         console.log(feedback);
         localStorage.setItem("current", feedback.innerHTML);
-        let currentTitle =
-          feedback.children[0].children[0].textContent;
+        let currentTitle = feedback.children[0].children[0].textContent;
         console.dir(currentTitle);
         console.log(this.setCurrentObj(collection, currentTitle));
       });
@@ -174,10 +173,10 @@ class SuuggestionView {
               </div>
               </div>
               <div class="card--comment">
-                <a href="./src/feedback-detail.html" class="comment--pan">
+                <a href="/details" class="comment--pan">
                 <svg class="icon">
                   <use
-                    xlink:href="./src/assets/shared/sprite.svg#icon-comments"
+                    xlink:href="src/assets/shared/sprite.svg#icon-comments"
                   ></use>
                 </svg>
                 <span class="comment__pan__counter">${
@@ -187,7 +186,7 @@ class SuuggestionView {
               </a>
             </div>`;
       let suggestionHtml = document.createElement("a");
-      suggestionHtml.href = "./src/feedback-detail.html";
+      suggestionHtml.href = "/details";
       suggestionHtml.innerHTML = suggestion__card__code;
       suggestionHtml.classList.add(
         "card--suggestion-content",
@@ -245,7 +244,7 @@ class SuuggestionView {
       <div href="#" class="card card--suggestion-content current-feedback__comment">
         <div class="left">
           <img class="user-profil" src="${
-            comment.user.image || this.currentUser.image
+            "src/" + comment.user.image || "src/" + this.currentUser.image
           }"/>
         </div>
         <div class="right">

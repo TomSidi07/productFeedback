@@ -86,7 +86,7 @@ class RoadmapView {
     </div>
     </div>`;
     let card = document.createElement("a");
-    card.href = "/src/feedback-detail.html";
+    card.href = "/details";
 
     card.classList.add("card", "card--roadmap");
     card.innerHTML = code;

@@ -1,0 +1,40 @@
+<%-include('partials/head.ejs')%>
+<body>
+  <div class="container">
+    <div class="feedBack-detail">
+      <section class="feedback-details___head">
+        <header class="feedback-details___header">
+          <!-- Go Back-->
+          <!-- Edit Feedback -->
+          <a href="/" class="btn btn--goback">Go back</a>
+          <a href="" id="btnEdit" class="btn btn--primary">Edit Feedback</a>
+        </header>
+      </section>
+      <section class="current-feedback"></section>
+      <section class="feedback-details___content">
+        <h2 class="feedback-details___content__heading">
+          <span class="comment-count">0</span>Comments
+        </h2>
+      </section>
+      <section class="feedback-details___control">
+        <h2>Add Comment</h2>
+        <form class="feedBack-detail-form">
+          <textarea
+            name="comment"
+            id="comment"
+            class="input-control"
+            placeholder="Type your comment here"
+          ></textarea>
+          <fieldset class="submit-area">
+            <p><span class="comment__Char-count">225</span> characters left</p>
+            <button href="" class="btn btn--default btn--submit-comment">
+              Post Comment
+            </button>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+  </div>
+  <%-include('partials/pop-edit-fdback.ejs') %>
+</body>
+<%-include('partials/footer.ejs') %>
